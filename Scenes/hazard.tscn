@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf4s2dtrh748t"]
+
+[ext_resource type="Script" path="res://Scripts/Hazard.gd" id="1_47gf2"]
+
+[node name="Hazard" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_47gf2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

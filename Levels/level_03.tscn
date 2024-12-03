@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgywuta6q4utb"]
+
+[ext_resource type="PackedScene" uid="uid://cregabvrp5r21" path="res://Scenes/world.tscn" id="1_4kw7j"]
+[ext_resource type="PackedScene" uid="uid://bocavdp6n8ul" path="res://Level Maps/level03_map.tscn" id="2_ip2p6"]
+[ext_resource type="PackedScene" uid="uid://kd60epyhycwt" path="res://Levels/level_04.tscn" id="2_okeug"]
+[ext_resource type="PackedScene" uid="uid://cf4s2dtrh748t" path="res://Scenes/hazard.tscn" id="3_eoalh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u5b4"]
+size = Vector2(64, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj620"]
+size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_416ko"]
+size = Vector2(48, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2ed6"]
+size = Vector2(48, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyxc1"]
+size = Vector2(24, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bssyh"]
+size = Vector2(40, 20)
+
+[node name="Level03" instance=ExtResource("1_4kw7j")]
+next_level = ExtResource("2_okeug")
+
+[node name="End" parent="." index="0"]
+position = Vector2(323, -160)
+
+[node name="Player" parent="." index="1"]
+position = Vector2(41, -2)
+
+[node name="level03_map" parent="." index="4" instance=ExtResource("2_ip2p6")]
+
+[node name="Hazard" parent="." index="5" instance=ExtResource("3_eoalh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hazard" index="0"]
+position = Vector2(96, 19)
+shape = SubResource("RectangleShape2D_3u5b4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hazard" index="1"]
+position = Vector2(212, 11)
+shape = SubResource("RectangleShape2D_oj620")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Hazard" index="2"]
+position = Vector2(272, 11)
+shape = SubResource("RectangleShape2D_416ko")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Hazard" index="3"]
+position = Vector2(240, -93)
+shape = SubResource("RectangleShape2D_j2ed6")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Hazard" index="4"]
+position = Vector2(100, -93)
+shape = SubResource("RectangleShape2D_eyxc1")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Hazard" index="5"]
+position = Vector2(60, -93)
+shape = SubResource("RectangleShape2D_eyxc1")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Hazard" index="6"]
+position = Vector2(300, -93)
+shape = SubResource("RectangleShape2D_bssyh")

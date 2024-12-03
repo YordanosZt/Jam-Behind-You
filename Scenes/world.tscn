@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cregabvrp5r21"]
+
+[ext_resource type="PackedScene" uid="uid://d2nnknw6uijxj" path="res://Scenes/player.tscn" id="1_g3se1"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_q3hru"]
+[ext_resource type="PackedScene" uid="uid://cnxh1uod8kpso" path="res://Scenes/ghost.tscn" id="3_nn47j"]
+[ext_resource type="PackedScene" uid="uid://kg8wsemm3kf4" path="res://Scenes/end.tscn" id="3_u2s7m"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_q3hru")
+
+[node name="End" parent="." instance=ExtResource("3_u2s7m")]
+position = Vector2(-22, 112)
+
+[node name="Player" parent="." instance=ExtResource("1_g3se1")]
+position = Vector2(-52, 144)
+
+[node name="Ghost" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_nn47j")]
+position = Vector2(-66, 66)
+player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompletedLabel" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 330.0
+offset_top = 32.0
+offset_right = 794.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 50
+text = "LEVEL COMPLETED!"

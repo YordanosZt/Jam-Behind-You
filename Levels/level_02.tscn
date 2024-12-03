@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cknah7yusueuj"]
+
+[ext_resource type="PackedScene" uid="uid://cregabvrp5r21" path="res://Scenes/world.tscn" id="1_oedow"]
+[ext_resource type="PackedScene" uid="uid://0w7bo410lm4s" path="res://Level Maps/level02_map.tscn" id="2_uud5p"]
+[ext_resource type="PackedScene" uid="uid://cgywuta6q4utb" path="res://Levels/level_03.tscn" id="2_xkayi"]
+
+[node name="Level02" instance=ExtResource("1_oedow")]
+next_level = ExtResource("2_xkayi")
+
+[node name="End" parent="." index="0"]
+position = Vector2(208, -120)
+
+[node name="Player" parent="." index="1"]
+position = Vector2(94, -2)
+
+[node name="Ghost" parent="." index="2"]
+position = Vector2(54, -30)
+
+[node name="level02_map" parent="." index="4" instance=ExtResource("2_uud5p")]
+
+[node name="Label" type="Label" parent="." index="5"]
+offset_left = 184.0
+offset_top = -112.0
+offset_right = 314.0
+offset_bottom = -46.0
+theme_override_font_sizes/font_size = 14
+text = "Wall Jump by 
+pressing left and
+right"
+horizontal_alignment = 1
